@@ -3,7 +3,7 @@
 
 <head>
 <title>Yash Mahendra-Portfolio</title>
-<link rel="icon" type="image/x-icon" href="favicon.ico" />
+<link rel="icon" type="image/x-icon" href="images/favicon.ico" />
 <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -11,9 +11,47 @@
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Ubuntu:bold' rel='stylesheet' type='text/css'>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 
 
+
+ <script>
+
+ 	$(window).scroll(function() {
+    if ($(window).scrollTop() >= 721) {
+        $("#projects").fadeIn(600);
+    }
+});
+ 
+	
+	$(window).scroll(function() {
+    if ($(window).scrollTop() >= 1600) {
+        $("#courses").fadeIn(600);
+    }
+});	
+ 
+	
+	$(window).scroll(function() {
+    if ($(window).scrollTop() >= 1900) {
+        $("#award").fadeIn(600);
+    }
+});	
+
+	
+	$(window).scroll(function() {
+    if ($(window).scrollTop() >= 2000) {
+        $("#skills").fadeIn(600);
+    }
+});	
+
+</script> 
+
+<script>
+$(window).scroll(function() {
+console.log($(window).scrollTop());
+});
+
+</script>
 <script>
 var things=["Yash Mahendra","a Web Developer","Algorithmist","a C++ Programmer","a Python Programmer","a Graphic Designer","a Musician"];
 
@@ -28,6 +66,27 @@ index++;
 index%=7;
 }
 </script>
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("#nav a").on('click', function(event) {
+    event.preventDefault();
+    var hash = this.hash;
+	
+	if(hash="#contact"){
+	$("#skills").show();
+	}
+	
+    $('html, body').animate({
+      scrollTop: $(hash).offset().top
+    }, 600, function(){
+      window.location.hash = hash;
+    });
+  });
+});
+</script>
+
 
 <style>
 
@@ -91,7 +150,7 @@ font-weight:bold;
 z-index:100;
 }
 
-#projects,#course,#awards,#skill,#contact
+#project,#course,#awards,#skill,#contact
 {
 text-align:center;
 color:white;
@@ -144,7 +203,7 @@ height:500px;
 width:auto\9;
 position:relative;
 text-align:center;
-background-image:url(space_back_3.jpg);
+background-image:url(images/space_back_3.jpg);
 }
 #name{
 font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
@@ -196,7 +255,7 @@ animation: cloud-animation 15s linear infinite;
   -ms-animation: cloud-animation 15s linear infinite;
   -moz-animation: cloud-animation 15s linear infinite;
   -webkit-animation: cloud-animation 15s linear infinite;
-   background: url(clouds.png) center repeat-x;
+   background: url(images/clouds.png) center repeat-x;
 }
 .cloud1{
 z-index:10;
@@ -221,20 +280,20 @@ width:auto\9;
 	
 	<div class="row" id="nav" style="margin-bottom:200px;">
 		<div class="col-sm-3"><button type="button" class="btn btn-default" style="width:130px;">Resume</button></div>
-		<a href="#projects"><div class="col-sm-3"><button type="button" class="btn btn-default" style="width:130px;">Projects</button></div></a>
+		<a href="#project"><div class="col-sm-3"><button type="button" class="btn btn-default" style="width:130px;">Projects</button></div></a>
 		<a href="#skill"><div class="col-sm-3"><button type="button" class="btn btn-default" style="width:130px;">Skills</button></div></a>
 		<a href="#contact"><div class="col-sm-3"><button type="button" class="btn btn-default" style="width:130px;">Contact</button></div></a>
 	</div>
 	
-	<h2 id="projects">Projects</h2>		
-	<div id="projects">
+	<h2 id="project">Projects</h2>		
+	<div id="projects" style="display:none;">
 		<div class="row" style="padding-bottom:50px;margin-left:0px;margin-right:0px;">
 			
 			<div class="col-sm-4">
 				<div class="panel panel-default box-shadow" style="width:280px;">
 					<div class="panel-heading">E-retail Website</div>
 					<div class="panel-body">
-					<img src="eretail.JPG" style="align:center "height="170px" width="170px"></br>
+					<img src="images/eretail.jpg" style="align:center "height="170px" width="170px"></br>
 					Skills:</br> HTML|CSS|Bootstrap|PHP|MySQLi</br>
 					<a href="https://github.com/glasses-on/Web-Development/tree/master/Eretail" target="_blank">Github link</a>
 					</div>
@@ -245,7 +304,7 @@ width:auto\9;
 				<div class="panel panel-default box-shadow" style="width:280px;">
 					<div class="panel-heading">2048 Game Simulation</div>
 					<div class="panel-body">
-					<img src="2048.JPG" style="align:center "height="170px" width="170px"></br>
+					<img src="images/2048.jpg" style="align:center "height="170px" width="170px"></br>
 					Skills:</br> Algorithms|Python|Python GUI</br>
 					<a href="http://www.codeskulptor.org/#user41_Acw9Cf0yZ6HREjs.py" target="_blank">Play!</a>
 					</div>
@@ -257,7 +316,7 @@ width:auto\9;
 					
 					<div class="panel-heading">Space Rocks</div>
 					<div class="panel-body">
-					<img src="spacerocks.png" style="align:center "height="170px" width="170px"></br>
+					<img src="images/spacerocks.png" style="align:center "height="170px" width="170px"></br>
 					Skills:</br> Algorithms|OOPS|Python GUI</br>
 					<a href="http://www.codeskulptor.org/#user41_JDAmyE8L4DTSi6U.py" target="_blank">Play!</a>
 					</div>
@@ -272,7 +331,7 @@ width:auto\9;
 					
 					<div class="panel-heading">Zombie Apocalypse</div>
 					<div class="panel-body">
-					<img src="zom.JPG" style="align:center "height="170px" width="170px"></br>
+					<img src="images/zom.jpg" style="align:center "height="170px" width="170px"></br>
 					Skills:</br> AI|Graph Algorithms|Python</br>
 					<a href="http://www.codeskulptor.org/#user41_RLRU59vsloJ3nyS.py" target="_blank">Play!</a>
 					</div>
@@ -284,7 +343,7 @@ width:auto\9;
 					
 					<div class="panel-heading">Tic Tac Toe AI</div>
 					<div class="panel-body">
-					<img src="tic.JPG" style="align:center "height="170px" width="170px"></br>
+					<img src="images/tic.jpg" style="align:center "height="170px" width="170px"></br>
 					Skills: </br>AI Algorithms|Python</br>
 					MonteCarlo:<a href="http://www.codeskulptor.org/#user41_v8WRj7WR5DBNOIV.py" target="_blank">Play</a>&nbsp;Minimax:<a href="http://www.codeskulptor.org/#user41_GEgs2A5BTmrjMwW.py" target="_blank">Play!</a>
 					</div>
@@ -296,7 +355,7 @@ width:auto\9;
 					
 					<div class="panel-heading">Customer Classification</div>
 					<div class="panel-body">
-					<img src="classification.JPG" style="align:center "height="170px" width="170px"></br>
+					<img src="images/classification.jpg" style="align:center "height="170px" width="170px"></br>
 					Skills:</br> Machine Learning Algorithms|MATLAB</br>
 					</div>
 				</div>
@@ -306,7 +365,7 @@ width:auto\9;
 	</div>
 	
 	<h2 id="course">Courses</h2>
-	<div id="courses" style="text-align:center;margin-bottom:100px;">
+	<div id="courses" style="text-align:center;margin-bottom:100px;display:none;">
 		
 		 <div class="panel-group" style="width:40%;display:inline-block;">
 			<div class="panel panel-default">
@@ -343,10 +402,10 @@ width:auto\9;
 			<div id="collapse2" class="panel-collapse collapse">
 			<ul class="list-group">
 				<li class="list-group-item"><b>RICE University</b></li>
-				<a href="Coursera_1.pdf" target="_blank"><li class="list-group-item">Introduction to Interactive Programming in Python (Part 1)</li></a>
-				<a href="Coursera_2.pdf" target="_blank"><li class="list-group-item">Introduction to Interactive Programming in Python (Part 2)</li></a>
-				<a href="Coursera_3.pdf" target="_blank"><li class="list-group-item">Principles of Computing (Part 1)</li></a>
-				<a href="Coursera_4.pdf" target="_blank"><li class="list-group-item">Principles of Computing (Part 2)</li></a>
+				<a href="certificate/Coursera_1.pdf" target="_blank"><li class="list-group-item">Introduction to Interactive Programming in Python (Part 1)</li></a>
+				<a href="certificate/Coursera_2.pdf" target="_blank"><li class="list-group-item">Introduction to Interactive Programming in Python (Part 2)</li></a>
+				<a href="certificate/Coursera_3.pdf" target="_blank"><li class="list-group-item">Principles of Computing (Part 1)</li></a>
+				<a href="certificate/Coursera_4.pdf" target="_blank"><li class="list-group-item">Principles of Computing (Part 2)</li></a>
 			</ul>
 			</div>
 			</div>
@@ -355,11 +414,11 @@ width:auto\9;
 	</div>
 	
 	<h2 id="awards">Awards</h2>
-	<h4 style="display:inline-block;padding-left:10%;margin-bottom:100px;padding-right:10%;">ACM - International Collegiate programming contest, Regionals, Asia- Amritapuri 2016</br>
-		Qualified for onsite. <a href="icpc_certificate.pdf" target="_blank"style="text-decoration:underline;color:black;">Certificate</a></h4> 
+	<h4 id="award" style="display:inline-block;padding-left:10%;margin-bottom:100px;padding-right:10%;display:none;">ACM - International Collegiate programming contest, Regionals, Asia- Amritapuri 2016</br>
+		Qualified for onsite. <a href="certificate/icpc_certificate.pdf" target="_blank"style="text-decoration:underline;color:black;">Certificate</a></h4> 
 	
 	<h2 id="skill">Skills</h2>
-	<table class="table">
+	<table class="table" id="skills" style="display:none;">
 				<col width="33%">
 				<tr>
 				<th>Comfortable With:</th><th>Learning:</th><th>Other Skills:</th>
@@ -375,14 +434,14 @@ width:auto\9;
 			</table>
 	
 	<h2 id="contact">Contact Me</h2>
-	<div class="row" style="margin-left:0px;margin-right:0px;">
+	<div class="row" id="contac" style="margin-left:0px;margin-right:0px;">
 		<div class="col-sm-6">
 			<h3 id="link" style="text-align:center;">Links</h3>
 				<div style="text-align:center;color:black;font-size:15px;font-family: 'Raleway', sans-serif;">
-					<a href="https://www.codechef.com/users/typeof_yash" target="_blank"><img src="cc.ico" alt= "CodeChef" class="link-img"></a>&nbsp;&nbsp;
-					<a href="https://www.hackerrank.com/Glasses_On" target="_blank"><img src="hr.png" alt= "HackerRank"class="link-img"></a>&nbsp;&nbsp;
-					<a href="https://github.com/glasses-on" target="_blank"><img src="gh.png" alt= "Git Hub"class="link-img"></a>&nbsp;&nbsp;
-					<a href="https://www.facebook.com/yashmahendra24" target="_blank"><img alt="Facebook" src="fb.png" class="link-img"></a>
+					<a href="https://www.codechef.com/users/typeof_yash" target="_blank"><img src="images/cc.ico" alt= "CodeChef" class="link-img"></a>&nbsp;&nbsp;
+					<a href="https://www.hackerrank.com/Glasses_On" target="_blank"><img src="images/hr.png" alt= "HackerRank"class="link-img"></a>&nbsp;&nbsp;
+					<a href="https://github.com/glasses-on" target="_blank"><img src="images/gh.png" alt= "Git Hub"class="link-img"></a>&nbsp;&nbsp;
+					<a href="https://www.facebook.com/yashmahendra24" target="_blank"><img alt="Facebook" src="images/fb.png" class="link-img"></a>
 				</div>	
 		</div>
 		<div class="col-sm-6">
@@ -393,8 +452,8 @@ width:auto\9;
 	</div>
 	
 	<div id="cloud">
-	<img class="cloud1" src ="clouds_2.png"></div>
-	<img src="green_last_3.png" id="last1">
+	<img class="cloud1" src ="images/clouds_2.png"></div>
+	<img src="images/green_last_3.png" id="last1">
 	
 </div>
 </div>
