@@ -11,8 +11,9 @@
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Ubuntu:bold' rel='stylesheet' type='text/css'>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
-
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script>
 
 	$(window).load(function() {
@@ -25,39 +26,61 @@
 
  <script>
 
+	
  	$(window).scroll(function() {
-    if ($(window).scrollTop() >= 710) {
+    if ($(window).scrollTop()>=$("#project").position().top-50) {
         $("#projects").fadeIn(600);
+		$("#nav_project").addClass('highlighted');
+		$("#nav_skill").removeClass('highlighted');
+		$("#nav_contact").removeClass('highlighted');
     }
 });
  
 	
 	$(window).scroll(function() {
-    if ($(window).scrollTop() >= 1550) {
+    if ($(window).scrollTop() >= $("#course").position().top-50) {
         $("#courses").fadeIn(600);
+
     }
 });	
  
 	
 	$(window).scroll(function() {
-    if ($(window).scrollTop() >= 1850) {
+    if ($(window).scrollTop() >= $("#awards").position().top-50) {
         $("#award").fadeIn(600);
     }
 });	
 
 	
 	$(window).scroll(function() {
-    if ($(window).scrollTop() >= 1950) {
+    if ($(window).scrollTop() >= $("#skill").position().top-50) {
         $("#skills").fadeIn(600);
+		$("#nav_project").removeClass('highlighted');
+		$("#nav_skill").addClass('highlighted');
+		$("#nav_contact").removeClass('highlighted');
+		
     }
 });	
 
+$(window).scroll(function() {
+    if ($(window).scrollTop() >= $("#contact").position().top-50) {
+
+		$("#nav_project").removeClass('highlighted');
+		$("#nav_skill").removeClass('highlighted');
+		$("#nav_contact").addClass('highlighted');
+		
+    }
+});	
+
+
 </script> 
+
+
 
 <script>
 $(document).ready(function(){
   // Add smooth scrolling to all links
-  $("#nav a").on('click', function(event) {
+  $("nav a").on('click', function(event) {
     event.preventDefault();
     var hash = this.hash;
 	
@@ -75,7 +98,7 @@ $(document).ready(function(){
 	}
 	
     $('html, body').animate({
-      scrollTop: $(hash).offset().top
+      scrollTop: $(hash).position().top 
     }, 500, function(){
       window.location.hash = hash;
     });
@@ -87,6 +110,12 @@ $(document).ready(function(){
 <style>
 
 *{ margin: 0 auto;}
+
+.fixed {
+    position:fixed;
+    top:0;
+    display:block;
+}
 
 body{
 background-color:black;
@@ -113,16 +142,13 @@ z-index:10;
      box-shadow: 0 16px 24px 2px rgba(0, 0, 0, .14), 0 6px 30px 5px rgba(0, 0, 0, .12), 0 8px 10px -5px rgba(0, 0, 0, .2)
 }
 
-#nav.row{
+#nav1.row{
 margin-right: 0px;
 margin-left: 0px;
 text-align:center;
-color:white;
-font-size:25px;
-font-family: 'Raleway', sans-serif;
-font-weight:bold;
 padding-left:25%;
 padding-right:25%;
+font-size:23px;
 }
 
 .panel-body
@@ -170,7 +196,7 @@ font-size:20px;
 color:#dbdbdb;
 padding:15px;
 }
-
+/*
 a{
 color:black;
 text-decoration:underline;
@@ -179,7 +205,7 @@ text-decoration:underline;
 a:hover{
 color:black;
 }
-
+*/
 .link-img
 {
 height:27px;width:27px;
@@ -201,6 +227,7 @@ position:relative;
 text-align:center;
 background-image:url(space_back_3.jpg);
 }
+
 #name{
 font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
 color:white;
@@ -238,8 +265,8 @@ width:auto\9;
 }
 
 #loader{
-	background-color:black;
-	height:700px;
+	background-color:#d1d1d1;
+	height:1200px;
 	text-align:center;
 }
 
@@ -250,11 +277,10 @@ width:auto\9;
 #idohere{
 font: 400 130px/0.1 'Great Vibes', Helvetica, sans-serif;
 color:white;
-
 text-shadow:5px 3px 8px grey;
 font-size:70px;
 margin-top:100px;
-margin-bottom:150px;
+margin-bottom:250px;
 margin-left:10%;
 }
 
@@ -268,6 +294,7 @@ margin-left:10%;
 	#idohere{
 	font-size:48px;
 	}
+	
 }
 @media screen and (max-width: 420px)
 {
@@ -280,6 +307,25 @@ margin-left:10%;
 	margin-bottom:100px;
 	margin-left:5%;
 	}
+	a#nav_li_resume{
+		padding-left:0px;
+		padding-right:10px;
+		font-size:15px;
+	}
+	a#nav_project,a#nav_skill
+	{
+		font-size:15px;
+		padding-left:10px;
+		padding-right:10px;
+	}
+	a#nav_contact{
+		font-size:15px;
+		padding-left:10px;
+	}
+	nav{
+	padding-left:0px;
+	}
+	
 }
 @media screen and (max-width: 375px)
 {
@@ -292,7 +338,70 @@ margin-left:10%;
 	margin-left:3%;
 	margin-bottom:100px;
 	}
+	
+	a#nav_li_resume{
+		padding-left:0px;
+		padding-right:10px;
+		font-size:14px;
+	}
+	a#nav_contact,a#nav_skill
+	{
+		font-size:14px;
+		padding-left:10px;
+		padding-right:10px;
+	}
+	nav{
+	padding-left:0px;
+	}
+	a#nav_contact{
+		font-size:14px;
+		padding-left:10px;
+	}
 }
+
+nav{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 35px;
+	background: #fff;
+	top:700px;
+	-webkit-box-shadow: 0px 0px 8px 5px #354a5b;
+       -moz-box-shadow: 0px 0px 8px 5px #354a5b;
+            box-shadow: 0px 0px 8px 5px #354a5b;
+}
+
+#nav_contact,#nav_project,#nav_skill,#nav_li_resume{
+    display: inline-block;
+    text-align: center;
+	padding-top:0px;
+	padding-left:20px;
+	padding-right:20px;
+	font-size: 20px;
+	color:black;
+	font-family: 'Raleway', sans-serif;
+    text-decoration: none;
+	float: left;
+}
+
+.fixed {
+	position: fixed; 
+	top: 0; 
+	height:35px; 
+	z-index: 10;
+}
+
+.not_highlighted{
+   font-family: 'Raleway', sans-serif;
+   color:black;
+}
+
+.highlighted{
+	font-family: 'Raleway', sans-serif;
+	color:#354a5b;
+	border-top:3px solid #354a5b;
+}
+
 </style>
 </head>
 
@@ -309,7 +418,7 @@ margin-left:10%;
 	
 	<div id="page1">
 	
-	<div>
+	<div style="height:200px">
 	<p id="idohere" ></p>
 	</div>
 	<script>
@@ -322,16 +431,35 @@ margin-left:10%;
 	nextMsg();	
 	</script>
 	
-	<div class="row" id="nav" style="margin-bottom:200px;">
-		<a href="Yash.Mahendra-CV.pdf" target="_blank"><div class="col-sm-3"><button type="button" class="btn btn-default" style="width:130px;">CV</button></div></a>
-		<a href="#project"><div class="col-sm-3"><button type="button" class="btn btn-default" style="width:130px;">Projects</button></div></a>
-		<a href="#skill"><div class="col-sm-3"><button type="button" class="btn btn-default" style="width:130px;">Skills</button></div></a>
-		<a href="#contact"><div class="col-sm-3"><button type="button" class="btn btn-default" style="width:130px;">Contact</button></div></a>
-	</div>
+	<nav style="display:none">
+	<ul style="list-style-type: none;">
+		<li ><a href="Resume-YashMahendra.pdf" id="nav_li_resume">Resume</a></li>
+		<li ><a href="#project" id="nav_project"><div >Projects</div></a></li>
+		<li ><a href="#skill" id="nav_skill"><div >Skills</div></a></li>
+		<li ><a href="#contact"id="nav_contact"><div> Contact</div></a></li>
+	</ul>
+	</nav>
+   <script>
+   $(document).ready(function(){
+	   $(window).bind('scroll', function() {
+	   var navHeight = $( window ).height() + 60;
+			 if ($(window).scrollTop() > navHeight) {
+				 $('nav').fadeIn(400);
+				 $('nav').addClass('fixed');
+			 }
+			 else {
+				 $('nav').removeClass('fixed');
+				 $('nav').fadeOut(400);
+			}		 
+		});
+	});
+</script>
+	
 	
 	<h2 id="project">Projects</h2>		
 	<div id="projects" style="display:none;">
 		<div class="row" style="padding-bottom:50px;margin-left:0px;margin-right:0px;">
+			
 			
 			<div class="col-sm-4">
 				<div class="panel panel-default box-shadow" style="width:280px;">
@@ -467,7 +595,7 @@ margin-left:10%;
 				<tr>
 				<th>Comfortable With:</th><th>Learning:</th><th>Other Skills:</th>
 				</tr>
-				<tr><td>C</td><td>Machine Learning</td><td><a href="photoshop.html" target="_blank">Photoshop</a></td></tr>
+				<tr><td>C</td><td>Machine Learning</td><td><a href="photoshop.html" target="_blank" style="color:#272727;text-decoration:underline">Photoshop</a></td></tr>
 				<tr><td>C++</td><td>Jquery</td></tr>
 				<tr><td>Python</td></tr>
 				<tr><td>JavaScript</td></tr>
@@ -490,7 +618,7 @@ margin-left:10%;
 		</div>
 		<div class="col-sm-6">
 			<h3 id="addr" style="text-align:center;">Address</h3>		
-				<address style="text-align:center;font-size:15px;font-family:'Raleway', sans-serif;">Yash Mahendra, Men's block A</br>, VIT University Chennai Campus,Vandalur Kelambakkam Road, Chennai-600048 </br>Phone: +91-9962048512</br><strong>Email: yashmahendra22@gmail.com, yashmahendra@yahoo.in</strong>
+				<address style="text-align:center;font-size:15px;font-family:'Raleway', sans-serif;">Yash Mahendra, Room no.1239, Men's block A</br>, VIT University Chennai Campus,Vandalur Kelambakkam Road, Chennai-600048 </br>Phone: +91-9962048512</br>Email: yashmahendra22@gmail.com, yashmahendra@yahoo.in
 				<address>		
 		</div>
 	</div>
