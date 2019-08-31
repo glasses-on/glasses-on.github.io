@@ -21,12 +21,12 @@
 		$("#loader").fadeOut();
 		$("#container").fadeIn();
 	});
-	
+
 </script>
 
  <script>
 
-	
+
  	$(window).scroll(function() {
     if ($(window).scrollTop()>=$("#project").position().top-50) {
         $("#projects").fadeIn(600);
@@ -35,32 +35,32 @@
 		$("#nav_contact").removeClass('highlighted');
     }
 });
- 
-	
+
+
 	$(window).scroll(function() {
     if ($(window).scrollTop() >= $("#course").position().top-50) {
         $("#courses").fadeIn(600);
 
     }
-});	
- 
-	
+});
+
+
 	$(window).scroll(function() {
     if ($(window).scrollTop() >= $("#awards").position().top-50) {
         $("#award").fadeIn(600);
     }
-});	
+});
 
-	
+
 	$(window).scroll(function() {
     if ($(window).scrollTop() >= $("#skill").position().top-50) {
         $("#skills").fadeIn(600);
 		$("#nav_project").removeClass('highlighted');
 		$("#nav_skill").addClass('highlighted');
 		$("#nav_contact").removeClass('highlighted');
-		
+
     }
-});	
+});
 
 $(window).scroll(function() {
     if ($(window).scrollTop() >= $("#contact").position().top-50) {
@@ -68,12 +68,12 @@ $(window).scroll(function() {
 		$("#nav_project").removeClass('highlighted');
 		$("#nav_skill").removeClass('highlighted');
 		$("#nav_contact").addClass('highlighted');
-		
+
     }
-});	
+});
 
 
-</script> 
+</script>
 
 
 
@@ -83,22 +83,22 @@ $(document).ready(function(){
   $("nav a").on('click', function(event) {
     event.preventDefault();
     var hash = this.hash;
-	
+
 	if(hash=="#contact"){
 	$("#skills").fadeIn();
 	$("#award").fadeIn();
 	$("#projects").fadeIn();
 	$("#courses").fadeIn();
-	
+
 	}
 	if(hash=="#skill"){
 	$("#award").show();
 	$("#projects").show();
 	$("#courses").show();
 	}
-	
+
     $('html, body').animate({
-      scrollTop: $(hash).position().top 
+      scrollTop: $(hash).position().top
     }, 500, function(){
       window.location.hash = hash;
     });
@@ -127,7 +127,7 @@ height:auto\9;
     background: -o-linear-gradient(black, #87bce5);      /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(black, #87bce5);    /* For Firefox 3.6 to 15 */
     background: linear-gradient(black, #87bce5);         /* Standard syntax */
-	
+
 }
 
 #last1{
@@ -290,11 +290,11 @@ margin-left:10%;
 
 	padding-top:10%;
 	font-size:50px;}
-		
+
 	#idohere{
 	font-size:48px;
 	}
-	
+
 }
 @media screen and (max-width: 420px)
 {
@@ -325,7 +325,7 @@ margin-left:10%;
 	nav{
 	padding-left:0px;
 	}
-	
+
 }
 @media screen and (max-width: 375px)
 {
@@ -338,7 +338,7 @@ margin-left:10%;
 	margin-left:3%;
 	margin-bottom:100px;
 	}
-	
+
 	a#nav_li_resume{
 		padding-left:0px;
 		padding-right:10px;
@@ -385,9 +385,9 @@ nav{
 }
 
 .fixed {
-	position: fixed; 
-	top: 0; 
-	height:35px; 
+	position: fixed;
+	top: 0;
+	height:35px;
 	z-index: 10;
 }
 
@@ -410,14 +410,14 @@ nav{
 <img src="loader.gif" id="loader_img">
 </div>
 <div id="container" style="display:none;">
-	
+
 	<div id="black">
 		<!--<img src="space_back_3.JPG" id="space_back">-->
 		<h2 id="name">Hello!</br>I'm Yash Mahendra</h2>
 	</div>
-	
+
 	<div id="page1">
-	
+
 	<div style="height:200px">
 	<p id="idohere" ></p>
 	</div>
@@ -428,9 +428,9 @@ nav{
         $('#idohere').html(messages[index%8]).fadeIn(500).delay(1800).fadeOut(300, nextMsg);
 	};
 	var messages=["I am a Web Developer","I am an Algorithmist","I am a C++ Programmer","I am a Python Programmer","I am a Graphic Designer","I am a Musician","I do Competitive programming","I love coding"];
-	nextMsg();	
+	nextMsg();
 	</script>
-	
+
 	<nav style="display:none">
 	<ul style="list-style-type: none;">
 		<li ><a href="Resume-YashMahendra.pdf" id="nav_li_resume">Resume</a></li>
@@ -450,17 +450,28 @@ nav{
 			 else {
 				 $('nav').removeClass('fixed');
 				 $('nav').fadeOut(400);
-			}		 
+			}
 		});
 	});
 </script>
-	
-	
-	<h2 id="project">Projects</h2>		
+
+
+	<h2 id="project">Projects</h2>
 	<div id="projects" style="display:none;">
 		<div class="row" style="padding-bottom:50px;margin-left:0px;margin-right:0px;">
-			
-			
+
+
+      <div class="col-sm-4">
+				<div class="panel panel-default box-shadow" style="width:280px;">
+					<div class="panel-heading">Travelling salesman problem - Genetic Algorithm</div>
+					<div class="panel-body">
+					<img src="tsp.png" style="align:center "height="170px" width="170px"></br>
+					Skills:</br> JS | Genetic Algorithm | Graph Theory</br>
+					<a href="https://glasses-on.github.io/TSP%20-%20GA/tsp.html" target="_blank">Check out</a>
+					</div>
+				</div>
+			</div>
+
 			<div class="col-sm-4">
 				<div class="panel panel-default box-shadow" style="width:280px;">
 					<div class="panel-heading">E-retail Website</div>
@@ -471,7 +482,8 @@ nav{
 					</div>
 				</div>
 			</div>
-			
+
+
 			<div class="col-sm-4">
 				<div class="panel panel-default box-shadow" style="width:280px;">
 					<div class="panel-heading">2048 Game Simulation</div>
@@ -482,10 +494,15 @@ nav{
 					</div>
 				</div>
 			</div>
-			
-			<div class="col-sm-4">
+
+
+		</div>
+
+		<div class="row" style="padding-bottom:50px;margin-left:0px;margin-right:0px;">
+
+      <div class="col-sm-4">
 				<div class="panel panel-default box-shadow" style="width:280px;">
-					
+
 					<div class="panel-heading">Space Rocks</div>
 					<div class="panel-body">
 					<img src="spacerocks.png" style="align:center "height="170px" width="170px"></br>
@@ -494,13 +511,10 @@ nav{
 					</div>
 				</div>
 			</div>
-		</div>
-		
-		<div class="row" style="padding-bottom:50px;margin-left:0px;margin-right:0px;">
-			
+
 			<div class="col-sm-4">
 				<div class="panel panel-default box-shadow" style="width:280px;">
-					
+
 					<div class="panel-heading">Zombie Apocalypse</div>
 					<div class="panel-body">
 					<img src="zom.JPG" style="align:center "height="170px" width="170px"></br>
@@ -509,10 +523,10 @@ nav{
 					</div>
 				</div>
 			</div>
-			
+
 			<div class="col-sm-4">
 				<div class="panel panel-default box-shadow" style="width:280px;">
-					
+
 					<div class="panel-heading">Tic Tac Toe AI</div>
 					<div class="panel-body">
 					<img src="tic.JPG" style="align:center "height="170px" width="170px"></br>
@@ -521,24 +535,26 @@ nav{
 					</div>
 				</div>
 			</div>
-			
-			<div class="col-sm-4">
-				<div class="panel panel-default box-shadow" style="width:280px;">
-					
-					<div class="panel-heading">Customer Classification</div>
-					<div class="panel-body">
-					<img src="classification.JPG" style="align:center "height="170px" width="170px"></br>
-					Skills:</br> Machine Learning Algorithms|MATLAB</br>
-					</div>
-				</div>
-			</div>
-			
-		</div>
+</div>
+      <div class="row" style="padding-bottom:50px;margin-left:0px;margin-right:0px;">
+        <div class="col-sm-4">
+          <div class="panel panel-default box-shadow" style="width:280px;">
+
+            <div class="panel-heading">Customer Classification</div>
+            <div class="panel-body">
+            <img src="classification.JPG" style="align:center "height="170px" width="170px"></br>
+            Skills:</br> Machine Learning Algorithms|MATLAB</br>
+            </div>
+          </div>
+        </div>
+        </div>
+
+
 	</div>
-	
+
 	<h2 id="course">Courses</h2>
 	<div id="courses" style="text-align:center;margin-bottom:100px;display:none;">
-		
+
 		 <div class="panel-group" style="width:40%;display:inline-block;">
 			<div class="panel panel-default">
 				<a data-toggle="collapse" href="#collapse1"><div class="panel-heading">
@@ -563,7 +579,7 @@ nav{
 			</div>
 			</div>
 		</div>
-		
+
 		<div class="panel-group"  style="width:40%;display:inline-block;">
 			<div class="panel panel-default">
 				<a data-toggle="collapse" href="#collapse2"><div class="panel-heading">
@@ -582,13 +598,13 @@ nav{
 			</div>
 			</div>
 		</div>
-			
+
 	</div>
-	
+
 	<h2 id="awards">Awards</h2>
 	<h4 id="award" style="display:inline-block;padding-left:10%;margin-bottom:100px;padding-right:10%;display:none;">ACM - International Collegiate programming contest, Regionals, Asia- Amritapuri 2016</br>
-		Qualified for onsite. <a href="icpc_certificate.pdf" target="_blank"style="text-decoration:underline;color:black;">Certificate</a></h4> 
-	
+		Qualified for onsite. <a href="icpc_certificate.pdf" target="_blank"style="text-decoration:underline;color:black;">Certificate</a></h4>
+
 	<h2 id="skill">Skills</h2>
 	<table class="table" id="skills" style="display:none;">
 				<col width="33%">
@@ -604,7 +620,7 @@ nav{
 				<tr><td>PHP</td></tr>
 				<tr><td>MySQLi</td></tr>
 			</table>
-	
+
 	<h2 id="contact">Contact Me</h2>
 	<div class="row" id="contac" style="margin-left:0px;margin-right:0px;">
 		<div class="col-sm-6">
@@ -614,19 +630,19 @@ nav{
 					<a href="https://www.hackerrank.com/Glasses_On" target="_blank"><img src="hr.png" alt= "HackerRank"class="link-img"></a>&nbsp;&nbsp;
 					<a href="https://github.com/glasses-on" target="_blank"><img src="gh.png" alt= "Git Hub"class="link-img"></a>&nbsp;&nbsp;
 					<a href="https://www.facebook.com/yashmahendra24" target="_blank"><img alt="Facebook" src="fb.png" class="link-img"></a>
-				</div>	
+				</div>
 		</div>
 		<div class="col-sm-6">
-			<h3 id="addr" style="text-align:center;">Address</h3>		
+			<h3 id="addr" style="text-align:center;">Address</h3>
 				<address style="text-align:center;font-size:15px;font-family:'Raleway', sans-serif;">Yash Mahendra, Men's block A</br>, VIT University Chennai Campus,Vandalur Kelambakkam Road, Chennai-600048 </br>Phone: +91-9962048512</br><strong>Email: yashmahendra22@gmail.com, yashmahendra@yahoo.in</strong>
-				<address>		
+				<address>
 		</div>
 	</div>
-	
+
 	<div id="cloud">
 	<img class="cloud1" src ="clouds_2.png"></div>
 	<img src="green_last_3.png" id="last1">
-	
+
 </div>
 </div>
 </body>
